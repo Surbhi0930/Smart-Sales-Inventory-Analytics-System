@@ -1,0 +1,4 @@
+Smart Sales & Inventory Analytics System W | Power BI, SQL, Power Automate, Azure (11-2025)
+– Built an end-to-end analytics system using SQL, Power Query, and DAX to clean data, model datasets, and generate key sales & inventory insights.
+– Developed a multi-page Power BI dashboard showcasing KPIs, product performance, regional trends, and stock-out alerts.
+– Automated weekly KPI report generation using Power Automate, integrating Azure SQL for cloud-based data refresh.

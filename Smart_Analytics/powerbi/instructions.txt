@@ -1,0 +1,25 @@
+Power BI Dashboard Instructions
+-------------------------------
+1. Open Power BI Desktop and import the CSVs from /data (Sales, Products, Inventory, Customers).
+2. Create relationships:
+   - Sales.ProductID -> Products.ProductID
+   - Sales.CustomerID -> Customers.CustomerID
+   - Inventory.ProductID -> Products.ProductID
+3. Model: Use star schema with Sales as fact table and Products, Customers, Inventory as dimensions.
+4. Suggested pages: Overview, Product Performance, Inventory, Regional Analysis, Forecast.
+5. Enable data refresh with scheduled gateway if using Azure SQL / Power BI Service.
+6. Apply Row-Level Security (optional) using Roles -> DAX filters on Region or City.
+
+Key DAX measures (copy to new measure):
+-- Total Revenue
+Total Revenue = SUMX(Sales, Sales[Quantity] * Sales[UnitPrice])
+
+-- Total Units Sold
+Total Units Sold = SUM(Sales[Quantity])
+
+-- YoY Growth (example requires a Date table)
+Revenue Prev Year = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('Date'[Date]))
+Revenue YoY % = DIVIDE([Total Revenue] - [Revenue Prev Year], [Revenue Prev Year])
+
+-- Days to Reorder (example)
+Reorder Flag = IF(RELATED(Products[ReorderLevel]) >= SUM(Inventory[Stock]), 1, 0)

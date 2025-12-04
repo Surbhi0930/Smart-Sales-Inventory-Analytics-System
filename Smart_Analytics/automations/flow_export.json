@@ -1,0 +1,20 @@
+{
+  "name": "Weekly KPI Report Flow",
+  "steps": [
+    {
+      "trigger": "Recurrence - Weekly Monday 08:00"
+    },
+    {
+      "action": "Refresh Power BI Dataset - workspace:SalesAnalytics, dataset:Sales"
+    },
+    {
+      "action": "Export report as PDF - report:SalesOverview"
+    },
+    {
+      "action": "Send Email - to:stakeholders@example.com, attach:SalesOverview.pdf"
+    },
+    {
+      "action": "Condition - low stock -> send alert to purchasing@example.com"
+    }
+  ]
+}

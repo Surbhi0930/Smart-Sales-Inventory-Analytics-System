@@ -1,0 +1,6 @@
+ProductID,ProductName,Category,UnitPrice,ReorderLevel
+101,T-Shirt,Apparel,299,10
+102,Sneakers,Footwear,2499,20
+103,Cap,Accessories,199,30
+104,Socks,Apparel,99,50
+105,Jacket,Apparel,1999,5

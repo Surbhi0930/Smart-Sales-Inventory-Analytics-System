@@ -1,0 +1,7 @@
+Power Automate Flow: Weekly KPI Report + Stock Alert
+1. Trigger: Recurrence (Weekly, Monday 08:00)
+2. Action: Refresh Power BI dataset (Power BI - Refresh a dataset)
+3. Action: Run a paginated report or export report page to PDF (Power BI Export)
+4. Action: Compose email with summary (Total Revenue, Top Product, Low Stock Items)
+5. Condition: If any product stock <= ReorderLevel -> attach low-stock CSV and send email to purchasing@company.com
+6. Action: Save PDF to OneDrive/SharePoint
